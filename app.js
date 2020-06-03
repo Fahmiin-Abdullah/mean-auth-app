@@ -14,12 +14,14 @@ mongoose.connection.on('connected', () => console.log('Mongoose is connected!'))
 const app = express();
 const port = 3000;
 const users = require('./routes/users');
+const events = require('./routes/events');
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/users', users);
 
 app.get('/', (req, res) => res.send('Hello world!'));
+app.use('/users', users);
+app.use('/events', events);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
