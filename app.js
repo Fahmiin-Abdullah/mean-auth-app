@@ -6,8 +6,12 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 
 const app = express();
-
 const port = 3000;
+const users = require('./routes/users');
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use('/users', users);
 
 app.get('/', (req, res) => res.send('Hello world!'));
 
