@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
+
+// TODO: Save password to secure file
 const uri = "mongodb+srv://Fahmiin:5wEgXXCLr2QvLmj@my-idea-pool-dvj9y.gcp.mongodb.net/test?retryWrites=true&w=majority";
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
